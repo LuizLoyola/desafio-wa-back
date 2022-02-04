@@ -18,7 +18,6 @@ app.UseCors(corsBuilder =>
     corsBuilder.AllowAnyOrigin();
     corsBuilder.AllowAnyMethod();
     corsBuilder.AllowAnyHeader();
-    corsBuilder.AllowCredentials();
 });
 
 app.MapGet("/", async (HttpContext context, Context dbContext) =>
