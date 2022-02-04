@@ -11,6 +11,16 @@ var connectionString = File.ReadAllText("connectionString.txt");
 builder.Services.AddDbContext<Context>(options => { options.UseSqlServer(connectionString); });
 
 var app = builder.Build();
+
+// allow any origin cors
+app.UseCors(corsBuilder =>
+{
+    corsBuilder.AllowAnyOrigin();
+    corsBuilder.AllowAnyMethod();
+    corsBuilder.AllowAnyHeader();
+    corsBuilder.AllowCredentials();
+});
+
 app.MapGet("/", async (HttpContext context, Context dbContext) =>
 {
     // validate header
@@ -70,9 +80,12 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
         })
         .ToList();
     
-    // return
+    // serialize to json using camelcase and return
+    var json = JsonSerializer.Serialize(ordersSerializable, new JsonSerializerOptions {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    });
     context.Response.ContentType = "application/json";
-    await context.Response.WriteAsync(JsonSerializer.Serialize(ordersSerializable));
+    await context.Response.WriteAsync(json);
 });
 
 app.Run("http://*:5050");
