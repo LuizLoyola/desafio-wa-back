@@ -68,23 +68,30 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
         .Take(pageSize)
         .ToListAsync();
 
-    var ordersSerializable = orders
-        .Select(o => new
-        {
-            o.Number,
-            o.CreationDate,
-            o.DeliveryDate,
-            o.Address,
-            o.DeliveryTeam,
-            Products = o.Products.Select(p => new
+    // get total count
+    var totalCount = await dbContext.Orders.CountAsync();
+
+    var ordersSerializable = new
+    {
+        Orders = orders
+            .Select(o => new
             {
-                p.Product.Name,
-                p.Product.Description,
-                p.Product.Price,
-                p.Quantity
+                o.Number,
+                o.CreationDate,
+                o.DeliveryDate,
+                o.Address,
+                o.DeliveryTeam,
+                Products = o.Products.Select(p => new
+                {
+                    p.Product.Name,
+                    p.Product.Description,
+                    p.Product.Price,
+                    p.Quantity
+                })
             })
-        })
-        .ToList();
+            .ToList(),
+        OrderCount = totalCount
+    };
 
     // serialize to json using camelcase and return
     var json = JsonSerializer.Serialize(ordersSerializable, new JsonSerializerOptions
