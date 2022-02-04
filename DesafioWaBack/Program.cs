@@ -74,4 +74,5 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
     context.Response.ContentType = "application/json";
     await context.Response.WriteAsync(JsonSerializer.Serialize(ordersSerializable));
 });
-app.Run();
+
+app.Run("http://*:5050");
