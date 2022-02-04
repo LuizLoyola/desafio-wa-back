@@ -19,6 +19,10 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
     if (header == null || !header.StartsWith("Basic "))
     {
         context.Response.StatusCode = 401;
+        
+        // return www authenticate
+        context.Response.Headers.Add("WWW-Authenticate", "Basic realm=\"Authentication Required\"");
+        
         return;
     }
 
