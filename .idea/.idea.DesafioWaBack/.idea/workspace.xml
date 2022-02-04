@@ -10,7 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26202e44-1b70-4d62-8e27-1d95cca4df4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DesafioWaBack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DesafioWaBack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesafioWaBack/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesafioWaBack/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.DesafioWaBack">
+  <component name="RunManager" selected="Publish to folder.Publish DesafioWaBack to folder">
     <configuration name="Publish DesafioWaBack to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" runtime="linux-x64" self_contained="true" target_folder="$PROJECT_DIR$/publish" target_framework="net6.0" uuid_high="-5301387764913388382" uuid_low="-7475966954209391999" />
       <method v="2" />
@@ -78,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644003252902</updated>
       <workItem from="1644003277031" duration="28000" />
-      <workItem from="1644003309961" duration="7271000" />
+      <workItem from="1644003309961" duration="7645000" />
     </task>
     <servers />
   </component>
