@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioWaBack", "DesafioWaBack\DesafioWaBack.csproj", "{B66DAFEA-6FBC-44A2-9840-07AA1DCA4A81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioWaBack.Domain", "DesafioWaBack.Domain\DesafioWaBack.Domain.csproj", "{DE350195-B779-4C72-AC44-DBF027FE8213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{B66DAFEA-6FBC-44A2-9840-07AA1DCA4A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B66DAFEA-6FBC-44A2-9840-07AA1DCA4A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B66DAFEA-6FBC-44A2-9840-07AA1DCA4A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE350195-B779-4C72-AC44-DBF027FE8213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE350195-B779-4C72-AC44-DBF027FE8213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE350195-B779-4C72-AC44-DBF027FE8213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE350195-B779-4C72-AC44-DBF027FE8213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
