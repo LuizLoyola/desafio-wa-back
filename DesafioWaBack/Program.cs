@@ -10,15 +10,20 @@ var connectionString = File.ReadAllText("connectionString.txt");
 // add EF
 builder.Services.AddDbContext<Context>(options => { options.UseSqlServer(connectionString); });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policyBuilder =>
+    {
+        policyBuilder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
-// allow any origin cors
-app.UseCors(corsBuilder =>
-{
-    corsBuilder.AllowAnyOrigin();
-    corsBuilder.AllowAnyMethod();
-    corsBuilder.AllowAnyHeader();
-});
+app.UseCors("AllowAll");
 
 app.MapGet("/", async (HttpContext context, Context dbContext) =>
 {
@@ -28,10 +33,10 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
     if (header == null || !header.StartsWith("Basic "))
     {
         context.Response.StatusCode = 401;
-        
+
         // return www authenticate
         context.Response.Headers.Add("WWW-Authenticate", "Basic realm=\"Authentication Required\"");
-        
+
         return;
     }
 
@@ -64,13 +69,15 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
         .ToListAsync();
 
     var ordersSerializable = orders
-        .Select(o => new {
+        .Select(o => new
+        {
             o.Number,
             o.CreationDate,
             o.DeliveryDate,
             o.Address,
             o.DeliveryTeam,
-            Products = o.Products.Select(p => new {
+            Products = o.Products.Select(p => new
+            {
                 p.Product.Name,
                 p.Product.Description,
                 p.Product.Price,
@@ -78,9 +85,10 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
             })
         })
         .ToList();
-    
+
     // serialize to json using camelcase and return
-    var json = JsonSerializer.Serialize(ordersSerializable, new JsonSerializerOptions {
+    var json = JsonSerializer.Serialize(ordersSerializable, new JsonSerializerOptions
+    {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
     });
     context.Response.ContentType = "application/json";

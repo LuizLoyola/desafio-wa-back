@@ -10,6 +10,10 @@
   <component name="ChangeListManager">
     <list default="true" id="26202e44-1b70-4d62-8e27-1d95cca4df4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DesafioWaBack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DesafioWaBack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesafioWaBack.Domain/DesafioWaBack.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DesafioWaBack.Domain/DesafioWaBack.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesafioWaBack/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesafioWaBack/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesafioWaBack/DesafioWaBack.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DesafioWaBack/DesafioWaBack.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesafioWaBack/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesafioWaBack/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +82,7 @@
       <updated>1644003252902</updated>
       <workItem from="1644003277031" duration="28000" />
       <workItem from="1644003309961" duration="7645000" />
-      <workItem from="1644013873130" duration="959000" />
+      <workItem from="1644013873130" duration="1182000" />
     </task>
     <servers />
   </component>
