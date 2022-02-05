@@ -83,6 +83,7 @@ app.MapGet("/", async (HttpContext context, Context dbContext) =>
                 o.DeliveryTeam,
                 Products = o.Products.Select(p => new
                 {
+                    p.Id,
                     p.Product.Name,
                     p.Product.Description,
                     p.Product.Price,
